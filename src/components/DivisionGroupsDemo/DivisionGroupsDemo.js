@@ -44,7 +44,6 @@ function DivisionGroupsDemo({
 
   return (
     <LayoutGroup>
-
     <Card as="section" className={styles.wrapper}>
       <header className={styles.header}>
         <SliderControl
@@ -66,13 +65,14 @@ function DivisionGroupsDemo({
           style={gridStructure}
           >
           {range(numOfGroups).map((groupIndex) => (
-            <motion.div key={groupIndex} className={styles.group}
+            <div key={groupIndex} className={styles.group}
             >
               {range(numOfItemsPerGroup).map((index) => {
+                const layoutId = `${id}-${index}`;
                 return (
                   <motion.div
-                  key={`${id}-${index}`}
-                  layout={true}
+                  key={layoutId}
+                  layout={layoutId}
                   className={styles.item}
                   transition={{
                     type: 'spring',
@@ -82,7 +82,7 @@ function DivisionGroupsDemo({
                   />
                   );
                 })}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
