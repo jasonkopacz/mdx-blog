@@ -8,6 +8,8 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 
 import { loadBlogPost } from '@/helpers/file-helpers';
 
+import COMPONENT_MAP from '@/helpers/mdx-components';
+
 export async function generateMetadata({ params }) {
   const post = await loadBlogPost(params.postSlug)
 
@@ -28,7 +30,7 @@ export default async function BlogPost({ params }) {
         publishedOn={post.frontmatter.publishedOn}
       />
       <div className={styles.page}>
-        <MDXRemote source={post.content} />
+        <MDXRemote source={post.content} components={COMPONENT_MAP}/>
       </div>
     </article>
   );

@@ -27,8 +27,7 @@ const monoFont = Spline_Sans_Mono({
 
 export const metadata = {
   title: BLOG_TITLE,
-  name: 'Jason Kopacz Blog',
-  content: 'A blog teaching topics spanning throughout the full stack'
+  description: 'Jason Kopacz Blog',
 }
 
 function RootLayout({ children }) {
